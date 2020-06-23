@@ -1,0 +1,27 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    background-color: #fe004a;
+    height: 100vh;
+  } */
+  #login{
+    background-color: rgba(0,0,0,.12);
+    height: 95vh;
+  }
+  #login .container #login-row #login-box {
+    margin-top: 60px;
+    max-width: 600px;
+    height: 320px;
+    /* border: 1px solid #9C9C9C; */
+    /* background-color: #fff; */
+  }
+  #login .container #login-row #login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-box #login-form #register-link {
+    margin-top: -85px;
+  }
+  input[type=checkbox], input[type=radio] {
+    width: 15%;
+    margin-bottom: 0px;
+}
