@@ -1,12 +1,12 @@
 <!-- <p>login works!</p> -->
-
+<div class="content-inside">
     <div id="login">
-        <h3 class="text-center text-white pt-5">Login form</h3>
+        <!-- <h3 class="text-center text-white pt-5">Login form</h3> -->
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" (keydown.enter)="loginUser(loginform)"  (ngSubmit)="loginUser(loginform)">
+                <div id="login-box" class="col-md-6 ">
+                    <div id="" class="col-md-12 section-box">
+                        <form id="login-form" #loginform="ngForm" class="form" (keydown.enter)="loginUser(loginform)"  (ngSubmit)="loginUser(loginform)">
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Username:</label><br>
@@ -17,15 +17,18 @@
                                 <input type="text" name="password" id="password" class="form-control" ngModel placeholder="PASSWORD" >
                             </div>
                             <div class="form-group">
+                                <p>{{ loginErrorMessage }} </p>
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                                <!-- <input [disabled]="!loginform.form.valid" type="submit" name="submit" class="btn btn-primary" value="submit"> -->
+                                <button [disabled]="!loginform.form.valid" type="submit" class="btn btn-primary">Login</button>
                             </div>
-                            <div id="register-link" class="text-right">
+                            <!-- <div id="register-link" class="text-right">
                                 <a href="#" class="text-info">Register here</a>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

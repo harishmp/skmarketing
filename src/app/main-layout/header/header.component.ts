@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import {Router} from '@angular/router'
 
@@ -8,15 +8,32 @@ import {Router} from '@angular/router'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @Input() selectedTab : string;
+
+  isUserLoggedIn = "false";
 
   constructor(private router: Router) { }
 
-  onClickMenu(data){
-    console.log("onClickMenu", data)
+  onClickMenu(){
    this.router.navigate(['/contact-us']);
  }
+ onClickMenuLogin(){
+  this.isUserLoggedIn = "false";
+  this.router.navigate(['/login']);
+  console.log('isUserLoggedIn', this.isUserLoggedIn);
+  window.localStorage.setItem('isUserLoggedIn', this.isUserLoggedIn);
+}
+
+onClickMenuLogout(){
+  this.isUserLoggedIn = "false";
+  this.router.navigate(['/dashboard']);
+  console.log('isUserLoggedIn', this.isUserLoggedIn);
+  window.localStorage.setItem('isUserLoggedIn', this.isUserLoggedIn);
+}
 
   ngOnInit() {
+    this.isUserLoggedIn = window.localStorage.getItem('isUserLoggedIn');
+    console.log('isUserLoggedIn', this.isUserLoggedIn);
   }
 
 }

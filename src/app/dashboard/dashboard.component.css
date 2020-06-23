@@ -20,3 +20,11 @@
   .list-inline li:last-child {
   border-right: none;
 }
+.msec-footer li{
+  background-color: #ff004a;
+  color: white;
+}
+.w-100 {
+  height: 400px;
+}
+
