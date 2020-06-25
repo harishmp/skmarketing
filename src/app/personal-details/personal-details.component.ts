@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../services/data.service';
-import '../../../src/assets/js/file-upload.js';
+// import '../../../src/assets/js/file-upload.js';
 
 @Component({
   selector: 'app-personal-details',

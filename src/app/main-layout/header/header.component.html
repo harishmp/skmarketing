@@ -24,7 +24,7 @@
       <a>SKM Group</a>
       <a>Whole Sale</a>
       <a>Product</a>
-      <a routerLink="/contact-us" routerLinkActive="active-link" (click)=onClickMenu()>Contact Us</a>
+      <a routerLink="/contact-us" routerLinkActive="active-link">Contact Us</a>
       <a (click)=onClickMenuLogin()><span><i class="fa fa-sign-in"></i>login</span></a>
       <label class="trigger close" for="close"><div></div></label>
       <input type="radio" name="tr" id="close" />
@@ -37,10 +37,11 @@
     <div class="top-right">
       <a routerLink="/personal-details" routerLinkActive="active-link">Personal Details</a>
       <a routerLink="/my-business" routerLinkActive="active-link">My Business</a>
-      <a>Achivements</a>
+      <a routerLink="/achivements" routerLinkActive="active-link">Achivements</a>
+      <a routerLink="/list-all-users" routerLinkActive="active-link">list All</a>
       <a>OurProduct</a>
       <a routerLink="/plan" routerLinkActive="active-link">Plan</a>
-      <a routerLink="/contact-us" routerLinkActive="active-link" (click)=onClickMenu()>Contact Us</a>
+      <a routerLink="/contact-us" routerLinkActive="active-link">Contact Us</a>
       <a (click)=onClickMenuLogout()><span><i class="fa fa-sign-out"></i>Logout</span></a>
       <label class="trigger close" for="close"><div></div></label>
       <input type="radio" name="tr" id="close" />
@@ -54,7 +55,7 @@
     <div>
       <label class="trigger menu" for="menu-trigger"></label>
       <input type="radio" name="tr" id="menu-trigger" />
-      <div class="top-right mr-5">
+      <div *ngIf="isUserLoggedIn == 'false'" class="top-right mr-5">
         <a style="padding: 0px 10px;"><i class="fa fa-facebook-square" aria-hidden="true" style="font-size: 25px;"></i></a>
         <a style="padding: 0px 10px;"><i class="fa fa-linkedin-square" aria-hidden="true" style="font-size: 25px;"></i></a>
         <a style="padding: 0px 10px;"><i class="fa fa-instagram" aria-hidden="true" style="font-size: 25px;"></i></a>

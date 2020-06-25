@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {TokenInterceptor} from './router-guard/login.interceptor';
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; 
+import { PaginationModule } from 'ng2-bootstrap/pagination';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import {HttpModule} from '@angular/http';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import {MatTreeModule} from '@angular/material/tree';
+import { Ng2TableModule } from 'ng2-table/ng2-table';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -17,16 +20,20 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RegisterWithUsComponent } from './register-with-us/register-with-us.component';
 import { MyBusinessComponent } from './my-business/my-business.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MytreeComponent } from './mytree/mytree.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { D3treeComponent } from './d3tree/d3tree.component';
-import { D3v4treeComponent } from './d3v4tree/d3v4tree.component';
-import { GojstreeComponent } from './gojstree/gojstree.component';
+import { D3treeComponent } from './reusable-components/d3tree/d3tree.component';
+import { D3v4treeComponent } from './reusable-components/d3v4tree/d3v4tree.component';
+import { GojstreeComponent } from './reusable-components/gojstree/gojstree.component';
 import { PlanComponent } from './plan/plan.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { OrgChartComponent } from './org-chart/org-chart.component';
+import { Ng2TableComponent } from './reusable-components/ng2-table/ng2-table.component';
+import { ListAllUsersComponent } from './admin/list-all-users/list-all-users.component';
+import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
+import { AchivementsComponent } from './achivements/achivements.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +52,11 @@ import { OrgChartComponent } from './org-chart/org-chart.component';
     GojstreeComponent,
     PlanComponent,
     PersonalDetailsComponent,
-    OrgChartComponent
+    OrgChartComponent,
+    Ng2TableComponent,
+    ListAllUsersComponent,
+    DashboardAdminComponent,
+    AchivementsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,10 +65,13 @@ import { OrgChartComponent } from './org-chart/org-chart.component';
     ReactiveFormsModule,
     HttpClientModule,
     HttpModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     MatTreeModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    Ng2TableModule,
+    // NgbModule.forRoot()
+    PaginationModule.forRoot(),
   ],
   providers: [
     // { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }

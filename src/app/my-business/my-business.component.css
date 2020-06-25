@@ -5,13 +5,24 @@ table, td, th {
   table th{
       /* background-color: #0272fe94;
       color: white; */
+      border: none;
   }
   table {
-    max-width: 200px;
-    border-collapse: collapse;
+    /* max-width: 200px;
+    border-collapse: collapse; */
     width: 100%;
+    border: none;
   }
   
   th, td {
-    padding: 5px;
+    /* padding: 5px; */
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
   }
+  .bg-msuccess{
+    background-color: #001031;
+  }
+  .card-body {
+    padding: 5px 10px;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import * as $ from '../../../src/assets/js/orgchart.js';
+// import * as orgchart from '../../../src/assets/js/orgchart.js';
 // import * as $ from "jquery";
 
 @Component({

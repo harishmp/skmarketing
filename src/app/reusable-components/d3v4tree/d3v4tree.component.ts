@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import '../../../src/assets/js/d3.v4.js';
+import '../../../assets/js/d3.v4.js';
 // import '../../../src/assets/js/heaper.js';
-import * as d3 from '../../../src/assets/js/d3.v4.js';
+import * as d3 from '../../../assets/js/d3.v4.js';
 
 @Component({
   selector: 'app-d3v4tree',

@@ -14,9 +14,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  onClickMenu(){
-   this.router.navigate(['/contact-us']);
- }
  onClickMenuLogin(){
   this.isUserLoggedIn = "false";
   this.router.navigate(['/login']);

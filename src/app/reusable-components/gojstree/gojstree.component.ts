@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as d3 from '../../../src/assets/js/d3.v3.min.js';
+import * as d3 from '../../../assets/js/d3.v3.min.js';
 
 @Component({
   selector: 'app-gojstree',
