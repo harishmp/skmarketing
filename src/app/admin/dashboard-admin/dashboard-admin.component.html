@@ -66,4 +66,30 @@
             </div>
           </div>
       </div>
+
+      <div class="row pt-3">
+        <div class="col-md-6">
+          <div style="display: block;">
+            <canvas baseChart 
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              [plugins]="lineChartPlugins">
+            </canvas>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div style="display: block;">
+            <canvas baseChart 
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+            </canvas>
+          </div>
+        </div>
+      </div>
 </div>

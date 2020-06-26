@@ -10,6 +10,7 @@ import {HttpModule} from '@angular/http';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import {MatTreeModule} from '@angular/material/tree';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -72,6 +73,7 @@ import { AchivementsComponent } from './achivements/achivements.component';
     Ng2TableModule,
     // NgbModule.forRoot()
     PaginationModule.forRoot(),
+    ChartsModule
   ],
   providers: [
     // { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
