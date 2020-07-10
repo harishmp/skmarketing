@@ -1,0 +1,18 @@
+.card-header {
+    background: none;
+    border: none;
+    padding: 0px 10px;
+    float: right;
+}
+label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: left;
+
+}
+input {
+    margin-left: 0.5em;
+    margin-bottom: 0px;
+    display: inline-block;
+    width: auto;
+}

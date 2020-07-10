@@ -8,7 +8,7 @@
   "files": [
     "src/main.ts",
     "src/polyfills.ts",
-    "src/app/ng2-table/table-data.ts"
+    "src/app/reusable-components/ng2-table/table-data.ts"
   ],
   "include": [
     "src/**/*.d.ts"

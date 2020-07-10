@@ -9,6 +9,9 @@ import {DataService} from '../services/data.service';
 })
 export class PersonalDetailsComponent implements OnInit {
   personalDetails : string;
+  communication_detl : string;
+  user_account_detl : string;
+  nominee_detl : string;
   na="N/A";
 
   constructor(public reportService: DataService) { }
@@ -19,13 +22,18 @@ export class PersonalDetailsComponent implements OnInit {
       // if (res.status == true) {
       //   console.log('Success');
       // }
-      this.personalDetails = resObj.data[0];
-      console.log('this.personalDetails==>', this.personalDetails);
+      this.personalDetails = resObj.data.personal_detl;
+      this.communication_detl = resObj.data.communication_detl;
+      this.user_account_detl = resObj.data.user_account_detl;
+      this.nominee_detl = resObj.data.nominee_detl;
+      console.log('this.personalDetails==>', this.personalDetails, this.communication_detl);
     },
     err => {
       console.log('In Error Block');
       console.log(typeof (err));
     });
+
+    // nomineee address attachment
   }
 
 }

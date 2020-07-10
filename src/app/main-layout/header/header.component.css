@@ -43,7 +43,7 @@
   }
   
  i{
-  font-size: 16px;
+  font-size: 25px;
   margin-right: 5px;
   color: #fe004a;
  }
@@ -67,7 +67,7 @@
     flex-direction: column;
     justify-content: space-around;
     height: 60px;
-    padding: 0px 30px;
+    padding: 0px 25px;
     text-align: right;
     color: #f8f9fa;
     text-decoration: none;
@@ -76,7 +76,7 @@
   
   .top-right>a:hover{
     /* background: gray; */
-    color: #0272fe94;
+    color: #fe004a;
   }
   
   .trigger{
@@ -99,13 +99,17 @@
     border-bottom: 5px solid #fe004a;
   }
   
-  .close{
+  /* .close{
     display: none;
     width: 100%;
     background: black;
     padding: 10px;
+  } */
+  .btn-dropdown {
+    color: #fff;
+    padding: 0px;
+    box-shadow: none;
   }
-  
   .close>div{
     margin: auto;
     height: 0px;
@@ -121,6 +125,10 @@
   
   input[type=radio]:checked + div{
     display: block;
+  }
+  
+  .modal-header {
+    background-color: #ff004a;
   }
   
   /* Media Queries */

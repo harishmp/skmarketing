@@ -5,18 +5,18 @@
     height: 100vh;
   } */
   #login{
-    background-color: rgba(0,0,0,.12);
-    height: 95vh;
+    /* background-color: rgba(0,0,0,.12); */
+    /* height: 95vh; */
   }
   #login .container #login-row #login-box {
-    margin-top: 60px;
+    /* margin-top: 60px;
     max-width: 600px;
-    height: 320px;
+    height: 320px; */
     /* border: 1px solid #9C9C9C; */
     /* background-color: #fff; */
   }
   #login .container #login-row #login-box #login-form {
-    padding: 20px;
+    /* padding: 20px; */
   }
   #login .container #login-row #login-box #login-form #register-link {
     margin-top: -85px;

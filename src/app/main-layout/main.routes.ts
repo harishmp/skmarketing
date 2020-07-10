@@ -9,6 +9,9 @@ import {PersonalDetailsComponent} from '../personal-details/personal-details.com
 import {ListAllUsersComponent} from '../admin/list-all-users/list-all-users.component';
 import {AchivementsComponent} from '../achivements/achivements.component';
 import {DashboardAdminComponent} from '../admin/dashboard-admin/dashboard-admin.component';
+import {OurProductsComponent} from '../our-products/our-products.component';
+import {InboxComponent} from '../inbox/inbox.component';
+import {MemberDashboardComponent} from '../member-dashboard/member-dashboard.component';
 
 export const mainRoutes: Routes = [
   
@@ -21,4 +24,7 @@ export const mainRoutes: Routes = [
     {path: 'list-all-users', component: ListAllUsersComponent},
     {path: 'achivements', component: AchivementsComponent},
     {path: 'dashboard-admin', component: DashboardAdminComponent},
+    {path: 'our-products', component: OurProductsComponent},
+    {path: 'inbox', component: InboxComponent},
+    {path: 'dashboard-member', component: MemberDashboardComponent},
 ];

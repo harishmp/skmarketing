@@ -58,12 +58,6 @@
 .bg-c-lite-green {
     background: linear-gradient(to right, #01a9ac, #01dbdf);
 }
-.bg-c-blue {
-    background: #17a2b8;
-}
-.text-right {
-    color: white;
-}
 .card-block {
     padding: 1.25rem;
 }
@@ -82,4 +76,16 @@
 }
 .border-left-warning {
     border-left: .25rem solid #f6c23e!important;
+}
+.text-white-50 {
+    color: rgb(255, 255, 255)!important;
+}
+.mcard-body{
+    background: white;
+    padding: 10px;
+    border-radius: 3px;
+}
+.m-text{
+    color: black !important;
+    font-size: 16px;
 }

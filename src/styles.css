@@ -338,7 +338,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  background-color: rgb(40, 167, 69);
+  background-color: rgb(40, 155, 167);
   color: #fff;
   border-radius: 4px 4px 0 0; 
 }

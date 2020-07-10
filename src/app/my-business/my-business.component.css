@@ -17,11 +17,13 @@ table, td, th {
   th, td {
     /* padding: 5px; */
     font-size: 14px;
-    font-weight: 600;
     border: none;
   }
-  .bg-msuccess{
-    background-color: #001031;
+  .bg-289ba7{
+    background-color: #289ba7;
+  }
+  .bg-001031db{
+    background-color: #001031db;
   }
   .card-body {
     padding: 5px 10px;

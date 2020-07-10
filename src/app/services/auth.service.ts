@@ -17,7 +17,7 @@ export class AuthService {
 
   getToken = (username, password) => {
     console.log("getting token")
-    let _url: string = 'https://feb5c98f-db58-4165-b781-cb0ecd62f978.mock.pstmn.io/login/';
+    let _url: string = environment.baseUrl + 'login/';
 
     let Authorization = btoa("openIdClient:tryoutonemoretime");
 
@@ -43,7 +43,7 @@ export class AuthService {
 
     console.log('body', body)
 
-    return this.http.post(_url,  body).pipe(map(
+    return this.http.post(_url,  body, options).pipe(map(
       res => {
         let resObj = res.json();
         console.log('resObj---------', resObj);

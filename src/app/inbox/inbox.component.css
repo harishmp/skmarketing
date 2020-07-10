@@ -1,0 +1,17 @@
+.label-success {
+    background: linear-gradient(to right, #0ac282, #0df3a3);
+}
+.label-primary {
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+}
+.label-danger {
+    background: linear-gradient(to right, #fe5d70, #fe909d);
+}
+.msg-label {
+    border-radius: 4px;
+    font-size: 75%;
+    padding: 4px 7px;
+    margin-right: 5px;
+    font-weight: 400;
+    color: #fff !important;
+}

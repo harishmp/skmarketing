@@ -11,11 +11,12 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import {MatTreeModule} from '@angular/material/tree';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { ChartsModule } from 'ng2-charts';
+import { NgbModalConfig, NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './main-layout/header/header.component';
-import { FooterComponent } from './main-layout/footer/footer.component';
+import { FooterComponent } from './footer/footer.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -35,6 +36,11 @@ import { Ng2TableComponent } from './reusable-components/ng2-table/ng2-table.com
 import { ListAllUsersComponent } from './admin/list-all-users/list-all-users.component';
 import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
 import { AchivementsComponent } from './achivements/achivements.component';
+import { OurProductsComponent } from './our-products/our-products.component';
+import { AddEditUserComponent } from './add-edit-user/add-edit-user.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { PwdChangeComponent } from './pwd-change/pwd-change.component';
+import { MemberDashboardComponent } from './member-dashboard/member-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +63,12 @@ import { AchivementsComponent } from './achivements/achivements.component';
     Ng2TableComponent,
     ListAllUsersComponent,
     DashboardAdminComponent,
-    AchivementsComponent
+    AchivementsComponent,
+    OurProductsComponent,
+    AddEditUserComponent,
+    InboxComponent,
+    PwdChangeComponent,
+    MemberDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -73,9 +84,12 @@ import { AchivementsComponent } from './achivements/achivements.component';
     Ng2TableModule,
     // NgbModule.forRoot()
     PaginationModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    NgbModule
   ],
   providers: [
+    NgbModalConfig,
+    NgbModal
     // { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
