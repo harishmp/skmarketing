@@ -10,7 +10,7 @@ import {ListAllUsersComponent} from '../admin/list-all-users/list-all-users.comp
 import {AchivementsComponent} from '../achivements/achivements.component';
 import {DashboardAdminComponent} from '../admin/dashboard-admin/dashboard-admin.component';
 import {OurProductsComponent} from '../our-products/our-products.component';
-import {InboxComponent} from '../inbox/inbox.component';
+import {InboxComponent} from '../admin/inbox/inbox.component';
 import {MemberDashboardComponent} from '../member-dashboard/member-dashboard.component';
 
 export const mainRoutes: Routes = [
