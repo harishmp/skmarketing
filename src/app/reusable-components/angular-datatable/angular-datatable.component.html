@@ -1,0 +1,40 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+      <tr>
+        <th>Sl. No.</th>
+        <!-- <th>ID</th> -->
+        <th>Member ID</th>
+        <th>Full name</th>
+        <th>Phone Number</th>
+        <th>Down Line Count</th>
+        <th>Joing Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="persons?.length != 0">
+        <tr *ngFor="let person of persons; let i=index">
+          <td>{{i + 1}}</td>
+            <!-- <td>{{ person.id }}</td> -->
+            <td>{{ person.member_id }}</td>
+            <td>{{ person.full_name }}</td>
+            <td>{{ person.phone_number }}</td>
+            <td>{{ person.down_line_count }}</td>
+            <td>{{ person.joing_date }}</td>
+            <td>
+              <i class="fa fa-eye mr-2" aria-hidden="true" style="cursor: pointer;" (click)=onClickView(person)></i>
+              <i class="fa fa-pencil-square-o mr-2" aria-hidden="true" style="cursor: pointer;" (click)=onClickAddEdit(person)></i>
+              <form>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" id={{person.id}} (change)="handleChange($event)" checked>
+                  <label class="custom-control-label" for={{person.id}}>Active</label>
+                </div>
+              </form>
+            </td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="persons?.length == 0">
+      <tr>
+        <td colspan="3" class="no-data-available">No data!</td>
+      </tr>
+    <tbody>
+  </table>

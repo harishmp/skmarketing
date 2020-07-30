@@ -1,4 +1,5 @@
 <div id="login">
+    <ngb-alert *ngIf="successMessage" [type]="alerttype" (close)="successMessage = ''">{{ successMessage }}</ngb-alert>
     <!-- <h3 class="text-center text-white pt-5">Login form</h3> -->
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">

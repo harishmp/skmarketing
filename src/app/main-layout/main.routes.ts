@@ -12,6 +12,7 @@ import {DashboardAdminComponent} from '../admin/dashboard-admin/dashboard-admin.
 import {OurProductsComponent} from '../our-products/our-products.component';
 import {InboxComponent} from '../admin/inbox/inbox.component';
 import {MemberDashboardComponent} from '../member-dashboard/member-dashboard.component';
+import {AddEditUserComponent} from '../admin/add-edit-user/add-edit-user.component';
 
 export const mainRoutes: Routes = [
   
@@ -27,4 +28,5 @@ export const mainRoutes: Routes = [
     {path: 'our-products', component: OurProductsComponent},
     {path: 'inbox', component: InboxComponent},
     {path: 'dashboard-member', component: MemberDashboardComponent},
+    {path: 'add-edit-details', component: AddEditUserComponent},
 ];

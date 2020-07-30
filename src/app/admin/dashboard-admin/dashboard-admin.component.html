@@ -6,7 +6,7 @@
     <div class="card-block">
     <div class="row align-items-end">
     <div class="col-8">
-    <h4 class="text-white">30200</h4>
+    <h4 class="text-white">{{result['total_members'] || na}}</h4>
     <h6 class="text-white m-b-0">Total members</h6>
      </div>
     <div class="col-4 text-right">
@@ -24,7 +24,7 @@
     <div class="card-block">
     <div class="row align-items-end">
     <div class="col-8">
-    <h4 class="text-white">290+</h4>
+    <h4 class="text-white">{{result['total_active'] || na}}</h4>
     <h6 class="text-white m-b-0">Total Active</h6>
     </div>
     <div class="col-4 text-right">
@@ -41,7 +41,7 @@
     <div class="card-block">
     <div class="row align-items-end">
     <div class="col-8">
-    <h4 class="text-white">145</h4>
+    <h4 class="text-white">{{result['total_inactive'] || na}}</h4>
     <h6 class="text-white m-b-0">Total Inactive</h6>
     </div>
     <div class="col-4 text-right">
@@ -58,7 +58,7 @@
     <div class="card-block">
     <div class="row align-items-end">
     <div class="col-8">
-    <h4 class="text-white">500</h4>
+    <h4 class="text-white">{{result['today_joined'] || na}}</h4>
     <h6 class="text-white m-b-0">Todays Joining</h6>
     </div>
     <div class="col-4 text-right">
@@ -211,7 +211,7 @@
         </div>
 
         <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-md-6 mb-4" (click)=onClickEnquiry() style="cursor: pointer;">
           <div class="card border-left-warning shadow h-100 py-2">
             <div class="card-body">
               <div class="row no-gutters align-items-center">

@@ -16,13 +16,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router, private modalService: NgbModal) { }
 
-//  onClickMenuLogin(){
-//   this.isUserLoggedIn = "website";
-//   this.router.navigate(['/login']);
-//   console.log('isUserLoggedIn', this.isUserLoggedIn);
-//   window.localStorage.setItem('isUserLoggedIn', this.isUserLoggedIn);
-// }
-
 onClickMenuLogout(){
   this.isUserLoggedIn = "website";
   this.router.navigate(['/dashboard']);
@@ -32,7 +25,10 @@ onClickMenuLogout(){
 
   ngOnInit() {
     this.isUserLoggedIn = window.localStorage.getItem('isUserLoggedIn');
-    console.log('isUserLoggedIn-login', this.isUserLoggedIn);
+    console.log('isUserLoggedIn-login check', this.isUserLoggedIn);
+    if (this.isUserLoggedIn === null || this.isUserLoggedIn === undefined || this.isUserLoggedIn === '' ) {
+      window.localStorage.setItem('isUserLoggedIn', "website");
+    }
   }
 
   onClickMenuLogin(contentLogin) {

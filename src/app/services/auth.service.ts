@@ -38,18 +38,56 @@ export class AuthService {
     'grant_type': 'password',
     'client_secret': 'abHNDOk0vOsVPNKViwQbj3RNEpumgtyirpqRoYKDLhqAoTrAabiNX4iX9heVcqL2BopUs0nQQDQyivp3NXyEWtKruYRvY74cr2TpHb0M0aEs2JpRmnwbIhA6OJnvhjXI',
     'client_id': '6EjMtZMCKcHKQRSyRMHQ6rZjPzfGIySTcDRszx8H',
-    'device_name': 'W',
+    // 'device_name': 'W',
     }
 
     console.log('body', body)
 
-    return this.http.post(_url,  body, options).pipe(map(
+    return this.http.post(_url,  body).pipe(map(
       res => {
         let resObj = res.json();
         console.log('resObj---------', resObj);
         window.localStorage.setItem('access_token', resObj.data['access_token']);
         window.localStorage.setItem('refresh_token', resObj.data['refresh_token']);
         return true;
+      }))
+      .catch(this._errorHandler);
+  }
+
+  getToken1 = (username, password) => {
+    let _url: string = environment.baseUrl + 'login/';
+
+    let Authorization = btoa("openIdClient:tryoutonemoretime");
+
+    let headers: Headers = new Headers({
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+      // 'Authorization': 'Basic ' + Authorization,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+      'Access-Control-Allow-Credentials': true,
+      'Content-Type': 'application/json; charset=UTF-8'
+    });
+    let options: RequestOptions = new RequestOptions({headers: headers});
+
+    let formData = new FormData(); 
+    formData.append('password', password); 
+    formData.append('username', username); 
+    formData.append('grant_type', 'password'); 
+    formData.append('client_secret', 'abHNDOk0vOsVPNKViwQbj3RNEpumgtyirpqRoYKDLhqAoTrAabiNX4iX9heVcqL2BopUs0nQQDQyivp3NXyEWtKruYRvY74cr2TpHb0M0aEs2JpRmnwbIhA6OJnvhjXI');
+    formData.append('client_id', '6EjMtZMCKcHKQRSyRMHQ6rZjPzfGIySTcDRszx8H');
+
+    console.log('formData------------', formData)
+
+    return this.http.post(_url,  formData).pipe(map(
+      res => {
+        let resObj = res.json();
+        console.log('resObj---------', resObj);
+        window.localStorage.setItem('access_token', resObj.data['access_token']);
+        window.localStorage.setItem('refresh_token', resObj.data['refresh_token']);
+        window.localStorage.setItem('role', resObj.data['role']);
+        window.localStorage.setItem('user', username);
+        return res;
       }))
       .catch(this._errorHandler);
   }

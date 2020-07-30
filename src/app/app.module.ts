@@ -2,16 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {TokenInterceptor} from './router-guard/login.interceptor';
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; 
-import { PaginationModule } from 'ng2-bootstrap/pagination';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import {HttpModule} from '@angular/http';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import {MatTreeModule} from '@angular/material/tree';
-import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { ChartsModule } from 'ng2-charts';
 import { NgbModalConfig, NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -32,7 +31,6 @@ import { GojstreeComponent } from './reusable-components/gojstree/gojstree.compo
 import { PlanComponent } from './plan/plan.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { OrgChartComponent } from './reusable-components/org-chart/org-chart.component';
-import { Ng2TableComponent } from './reusable-components/ng2-table/ng2-table.component';
 import { ListAllUsersComponent } from './admin/list-all-users/list-all-users.component';
 import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
 import { AchivementsComponent } from './achivements/achivements.component';
@@ -41,6 +39,7 @@ import { AddEditUserComponent } from './admin/add-edit-user/add-edit-user.compon
 import { InboxComponent } from './admin/inbox/inbox.component';
 import { PwdChangeComponent } from './pwd-change/pwd-change.component';
 import { MemberDashboardComponent } from './member-dashboard/member-dashboard.component';
+import { AngularDatatableComponent } from './reusable-components/angular-datatable/angular-datatable.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +59,6 @@ import { MemberDashboardComponent } from './member-dashboard/member-dashboard.co
     PlanComponent,
     PersonalDetailsComponent,
     OrgChartComponent,
-    Ng2TableComponent,
     ListAllUsersComponent,
     DashboardAdminComponent,
     AchivementsComponent,
@@ -68,7 +66,8 @@ import { MemberDashboardComponent } from './member-dashboard/member-dashboard.co
     AddEditUserComponent,
     InboxComponent,
     PwdChangeComponent,
-    MemberDashboardComponent
+    MemberDashboardComponent,
+    AngularDatatableComponent
   ],
   imports: [
     BrowserModule,
@@ -81,11 +80,10 @@ import { MemberDashboardComponent } from './member-dashboard/member-dashboard.co
     MatTreeModule,
     MatIconModule,
     MatButtonModule,
-    Ng2TableModule,
     // NgbModule.forRoot()
-    PaginationModule.forRoot(),
     ChartsModule,
-    NgbModule
+    NgbModule,
+    DataTablesModule
   ],
   providers: [
     NgbModalConfig,

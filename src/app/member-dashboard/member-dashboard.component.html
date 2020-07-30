@@ -5,7 +5,7 @@
       <div class="card bg-info text-white shadow">
         <div class="card-body">Member ID :</div>
         <div class="card-body mcard-body">
-          <div class="text-white-50 small m-text">SKM001</div>
+          <div class="text-white-50 small m-text">{{result['member_id'] || na}}</div>
         </div>
       </div>
     </div>
@@ -13,7 +13,7 @@
       <div class="card bg-info text-white shadow">
         <div class="card-body">Upline :</div>
         <div class="card-body mcard-body">
-          <div class="text-white-50 small m-text">Sudhakar</div>
+          <div class="text-white-50 small m-text">{{result['mlm_admin'] || na}}</div>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <div class="card bg-info text-white shadow">
         <div class="card-body">Right Downline :</div>
         <div class="card-body mcard-body">
-          <div class="text-white-50 small m-text">Shekar</div>
+          <div class="text-white-50 small m-text">{{result['right_downline'] || na}}</div>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
       <div class="card bg-info text-white shadow">
         <div class="card-body">Left Downline :</div>
         <div class="card-body mcard-body">
-          <div class="text-white-50 small m-text">Chandru</div>
+          <div class="text-white-50 small m-text">{{result['left_downline'] || na}}</div>
         </div>
       </div>
     </div>
@@ -147,7 +147,7 @@
                   id="calories-text"
                   style="color: #ffffff;"
                 >
-                  13,100
+                {{result['my_downline_count'] || na}}
                 </h3>
                 <div id="foodimg" style="margin-top: 5px;">
                   <span
@@ -194,7 +194,7 @@
                   id="calories-text"
                   style="color: #ffffff;"
                 >
-                  13,100
+                {{result['my_directs'] || na}}
                 </h3>
                 <div id="foodimg" style="margin-top: 5px;">
                   <span
@@ -241,7 +241,7 @@
                   id="calories-text"
                   style="color: #ffffff;"
                 >
-                  13,100
+                {{result['left_downline'] || na}}
                 </h3>
                 <div id="foodimg" style="margin-top: 5px;">
                   <span
@@ -289,7 +289,7 @@
                   id="calories-text"
                   style="color: #ffffff;"
                 >
-                  13,100
+                {{result['right_downline'] || na}}
                 </h3>
                 <div id="foodimg" style="margin-top: 5px;">
                   <span
@@ -316,7 +316,7 @@
 
   <!-- Content Row -->
   <!-- Content Row -->
-  <div class="row">
+  <div class="row" style="display: none;">
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-primary shadow h-100 py-2">

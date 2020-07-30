@@ -13,9 +13,70 @@ export class DataService {
 
   constructor(private http: Http) { }
 
-  getpersonaldetails() {
-    let _url: string = environment.baseUrl + 'get_user_profile/';
-    return this.http.get(_url).map(
+  getpersonaldetails(queryParam) {
+    let token = 'Bearer' + ' ' + window.localStorage.getItem('access_token');
+    let headers = new Headers();
+    headers.append('Authorization', token);
+    let options: RequestOptions = new RequestOptions({headers: headers});
+
+    let _url: string = environment.baseUrl + 'user_profile/';
+    return this.http.get(_url, options).map(
+      res => {
+        return res;
+      })
+      .catch(this._errorHandler);
+  };
+
+  gettreetopsummary() {
+    let token = 'Bearer' + ' ' + window.localStorage.getItem('access_token');
+    let headers = new Headers();
+    headers.append('Authorization', token);
+    let options: RequestOptions = new RequestOptions({headers: headers});
+
+    let _url: string = environment.baseUrl + 'tree/?member_id=' + window.localStorage.getItem('user') + '&level_req=1';
+    return this.http.get(_url, options).map(
+      res => {
+        return res;
+      })
+      .catch(this._errorHandler);
+  };
+
+  getadmindashboard() {
+    let token = 'Bearer' + ' ' + window.localStorage.getItem('access_token');
+    let headers = new Headers();
+    headers.append('Authorization', token);
+    let options: RequestOptions = new RequestOptions({headers: headers});
+
+    let _url: string = environment.baseUrl + 'admin_dash_board';
+    return this.http.get(_url, options).map(
+      res => {
+        return res;
+      })
+      .catch(this._errorHandler);
+  };
+
+  getmemberdashboard() {
+    let token = 'Bearer' + ' ' + window.localStorage.getItem('access_token');
+    let headers = new Headers();
+    headers.append('Authorization', token);
+    let options: RequestOptions = new RequestOptions({headers: headers});
+
+    let _url: string = environment.baseUrl + 'user_dashboard';
+    return this.http.get(_url, options).map(
+      res => {
+        return res;
+      })
+      .catch(this._errorHandler);
+  };
+
+  getmemberlist() {
+    let token = 'Bearer' + ' ' + window.localStorage.getItem('access_token');
+    let headers = new Headers();
+    headers.append('Authorization', token);
+    let options: RequestOptions = new RequestOptions({headers: headers});
+
+    let _url: string = environment.baseUrl + 'admin_member_list';
+    return this.http.get(_url, options).map(
       res => {
         return res;
       })
@@ -23,8 +84,13 @@ export class DataService {
   };
 
   getavailablepositions() {
-    let _url: string = environment.baseUrl + 'available_positions/?member_id=30';
-    return this.http.get(_url).map(
+    let token = 'Bearer' + ' ' + window.localStorage.getItem('access_token');
+    let headers = new Headers();
+    headers.append('Authorization', token);
+    let options: RequestOptions = new RequestOptions({headers: headers});
+
+    let _url: string = environment.baseUrl + 'available_positions/?member=' + window.localStorage.getItem('user');
+    return this.http.get(_url, options).map(
       res => {
         return res;
       })
@@ -40,9 +106,14 @@ export class DataService {
       .catch(this._errorHandler);
   };
 
-  createUserProfile(userDetails) {
-    let _url: string = environment.baseUrl + 'get_user_profile/';
-    return this.http.post(_url, userDetails).map(
+  createUserProfile(formData) {
+    let token = 'Bearer' + ' ' + window.localStorage.getItem('access_token');
+    let headers = new Headers();
+    headers.append('Authorization', token);
+    let options: RequestOptions = new RequestOptions({headers: headers});
+
+    let _url: string = environment.baseUrl + 'user_profile/';
+    return this.http.post(_url, formData, options).map(
       res => {
        return res;
 

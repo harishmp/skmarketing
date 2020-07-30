@@ -20,7 +20,7 @@
                 </div>
               </div>
   
-              <form class="confi-vehi-edit-form">
+              <form class="confi-vehi-edit-form" #form="ngForm" (ngSubmit)="onFormSubmit()">
                   
                     <div class="col-md-12 col-lg-12 mb-4">
                       <h4 class="vehicle-row-heading"> User Account Details</h4>
@@ -43,20 +43,20 @@
                                       <div class="form-group col-md-3 col-lg-3">
                                         <label for="email" class="col-form-label">Member ID 
                                           <button type="submit" class="not-active btn btn-primary text-uppercase" style="padding: 0px 10px;">Generate</button></label>
-                                        <input type="email" class="form-control" id="vehiclemodel" name="vehiclemodel" ngModel required="">
+                                        <input class="form-control" id="vehiclemodel" name="vehiclemodel" [(ngModel)]="member.member" required="" disabled>
                                       </div>
     
                                         <div class="form-group col-md-3 col-lg-3">
                                           <label for="phone" class="col-form-label"> Available Position</label>
-                                          <input class="form-control" id="regnumber" [(ngModel)]="availablePositions" name="regnumber" type="email" required="">
+                                          <input class="form-control" id="regnumber" [(ngModel)]="member.position" name="regnumber" type="email" required="" disabled>
                                         </div>
                                         <div class="form-group col-md-3 col-lg-3">
                                           <label for="address" class="col-form-label">Password</label>
-                                          <input class="form-control" id="builddate" ngModel name="builddate" required="">
+                                          <input class="form-control" id="builddate" [(ngModel)]="member.password" name="builddate" required="">
                                         </div>
                                         <div class="form-group col-md-3 col-lg-3">
                                           <label for="address" class="col-form-label">Confirm Password</label>
-                                          <input class="form-control" id="builddate" ngModel name="builddate" required="">
+                                          <input class="form-control" id="builddate" [(ngModel)]="member.password" name="builddate" required="">
                                         </div>
                                   </div>
                           </div>
@@ -69,7 +69,6 @@
                                     <div class="row">
                                       <div class="form-group col-md-1 col-lg-1">
                                         <label for="name" class="col-form-label">Title</label>
-                                        <!-- <input type="text" class="form-control" id="vin" name="vin" placeholder="" ngModel required=""> -->
                                         <select name="country" class="form-control">
                                           <!-- <option disabled="" selected="">- Select -</option> -->
                                           <option value="Mr"> Mr </option>
@@ -79,20 +78,19 @@
                                       </div>
                                       <div class="form-group col-md-4 col-lg-4">
                                         <label for="email" class="col-form-label">First Name</label>
-                                        <input type="email" class="form-control" id="vehiclemodel" name="vehiclemodel" ngModel required="">
+                                        <input type="email" class="form-control" id="firstname" name="firstname" [(ngModel)]="member.first_name" required="">
                                       </div>
     
                                         <div class="form-group col-md-4 col-lg-4">
                                           <label for="phone" class="col-form-label"> Last  Name</label>
-                                          <input class="form-control" id="regnumber" ngModel name="regnumber" type="email" required="">
+                                          <input class="form-control" id="lastname" [(ngModel)]="member.last_name" name="lastname" type="email" required="">
                                         </div>
                                         <div class="form-group col-md-3 col-lg-3">
                                           <label for="address" class="col-form-label">DOB</label>
-                                          <input class="form-control" id="builddate" ngModel name="builddate" type="date" required="">
+                                          <input class="form-control" id="dob" [(ngModel)]="member.dob" name="dob" type="date" required="">
                                         </div>
                                         <div class="form-group col-md-2 col-lg-2">
                                           <label for="address" class="col-form-label">Relation</label>
-                                          <!-- <input class="form-control" id="" ngModel name="" type="text" required=""> -->
                                           <select name="country" class="form-control">
                                               <option disabled="" selected="">- Select -</option>
                                               <option value="Father"> Father </option>
@@ -102,8 +100,8 @@
                                           </select>
                                         </div>
                                         <div class="form-group col-md-4 col-lg-4">
-                                          <label for="address" class="col-form-label">Name</label>
-                                          <input class="form-control" id="builddate" ngModel name="builddate" required="">
+                                          <label for="address" class="col-form-label">Gaurdian Name</label>
+                                          <input class="form-control" id="gaurdianname" [(ngModel)]="member.gaurdian_name" name="gaurdianname" required="">
                                         </div>
                                   </div>
                           </div>
@@ -116,23 +114,22 @@
                                   <div class="row">
                                       <div class="form-group col-md-6 col-lg-6">
                                         <label for="address" class="col-form-label">Address 1</label>
-                                        <input class="form-control" id="builddate" ngModel name="builddate" required="">
+                                        <input class="form-control" id="address1" [(ngModel)]="member.address" name="address1" required="">
                                       </div>
                                       <div class="form-group col-md-6 col-lg-6">
                                         <label for="address" class="col-form-label">Address 2</label>
-                                        <input class="form-control" id="builddate" ngModel name="builddate" required="">
+                                        <input class="form-control" id="address2" [(ngModel)]="member.address_2" name="address2" required="">
                                       </div>
                                       <div class="form-group col-md-2 col-lg-2">
                                         <label for="address" class="col-form-label">Mobile</label>
-                                        <input class="form-control" id="" ngModel name="" type="text" required="">
+                                        <input class="form-control" id="regnumber" [(ngModel)]="member.mobile" name="regnumber" type="text" required="">
                                       </div>
                                       <div class="form-group col-md-2 col-lg-2">
                                         <label for="phone" class="col-form-label">Email</label>
-                                        <input class="form-control" id="regnumber" ngModel name="regnumber" type="email" required="">
+                                        <input class="form-control" id="regemail" [(ngModel)]="member.email" name="regemail" type="email" required="">
                                       </div>
                                       <div class="form-group col-md-2 col-lg-2">
                                         <label for="address" class="col-form-label">City</label>
-                                        <!-- <input class="form-control" id="builddate" ngModel name="builddate" required=""> -->
                                         <select name="country" class="form-control">
                                           <option disabled="" selected="">- Select -</option>
                                           <option value="Father"> Lucknow </option>
@@ -146,7 +143,6 @@
                                       </div>
                                       <div class="form-group col-md-2 col-lg-2">
                                         <label for="address" class="col-form-label">State</label>
-                                        <!-- <input class="form-control" id="builddate" ngModel name="builddate" required=""> -->
                                         <select name="country" class="form-control">
                                           <option disabled="" selected="">- Select -</option>
                                           <option value="Father"> Lucknow </option>
@@ -160,11 +156,11 @@
                                       </div>
                                       <div class="form-group col-md-2 col-lg-2">
                                         <label for="address" class="col-form-label">Pincode</label>
-                                        <input class="form-control" id="builddate" ngModel name="builddate" required="">
+                                        <input class="form-control" id="pincode" [(ngModel)]="member.pincode" name="pincode" required="">
                                       </div>
                                       <div class="form-group col-md-2 col-lg-2">
                                         <label for="address" class="col-form-label">Country</label>
-                                        <!-- <input class="form-control" id="builddate" ngModel name="builddate" required=""> -->
+                                        <!-- <input class="form-control" id="country" [(ngModel)]="member.password" name="country" required=""> -->
                                         <select name="country" class="form-control">
                                           <option disabled="" selected="">- Select -</option>
                                           <option value="Father"> Lucknow </option>
@@ -187,30 +183,30 @@
                     <div class="row">
                       <div class="form-group col-md-3 col-lg-3">
                         <label for="" class="col-form-label">Account Number</label>
-                        <input type="text" class="form-control" id="vin" name="vin" disabled>
+                        <input type="text" class="form-control" id="accountnumber" [(ngModel)]="member.acc_number" name="accountnumber">
                       </div>
                       <div class="form-group col-md-3 col-lg-3">
                         <label for="" class="col-form-label">Account Holder Name</label>
-                        <input type="text" class="form-control" id="vehiclemodel" name="vehiclemodel"
+                        <input type="text" class="form-control" id="accountname" [(ngModel)]="member.username" name="accountname"
                          required="">
                       </div>
                       <div class="form-group col-md-3 col-lg-3">
                         <label for="" class="col-form-label">Bank Name</label>
-                        <input type="text" class="form-control" id="vehiclemodel" name="vehiclemodel"
+                        <input type="text" class="form-control" id="bankname" [(ngModel)]="member.bank_name" name="bankname"
                          required="">
                       </div>
                       <div class="form-group col-md-3 col-lg-3">
                         <label for="" class="col-form-label">IFSC Code</label>
-                        <input type="text" class="form-control" id="vehiclemodel" name="vehiclemodel"
+                        <input type="text" class="form-control" id="ifsccode" [(ngModel)]="member.ifsc_code" name="ifsccode"
                          required="">
                       </div>
                       <div class="form-group col-md-3 col-lg-3">
                         <label for="" class="col-form-label">MICR CODE</label>
-                        <input class="form-control" id="regnumber" ngModel name="regnumber"  required="">
+                        <input class="form-control" id="micrcode" [(ngModel)]="member.micr_code" name="micrcode"  required="">
                       </div>
                       <div class="form-group col-md-3 col-lg-3">
                           <label for="" class="col-form-label">PAN Number</label>
-                          <input class="form-control" id="regnumber" ngModel name="regnumber"  required="">
+                          <input class="form-control" id="pannumber" [(ngModel)]="member.pan_number" name="pannumber"  required="">
                         </div>
                       </div>
                   </div>
@@ -222,12 +218,12 @@
                   <div class="container-fluid">
                     <div class="row">
                       <div class="form-group col-md-4 col-lg-4">
-                        <label for="gsm" class="col-form-label">Name </label>
-                        <input type="text" class="form-control" id="vin" name="vin" placeholder="" ngModel required="">
+                        <label for="gsm" class="col-form-label">Nominee Name </label>
+                        <input type="text" class="form-control" id="nomineename" name="nomineename" placeholder="" [(ngModel)]="member.nominee" required="">
                       </div>
                       <div class="form-group col-md-2 col-lg-2">
                         <label for="email" class="col-form-label">Relation</label>
-                        <!-- <input type="email" class="form-control" id="vehiclemodel" name="vehiclemodel" ngModel required=""> -->
+                        <!-- <input type="email" class="form-control" id="vehiclemodel" name="vehiclemodel" [(ngModel)]="member.password" required=""> -->
                         <select name="country" class="form-control">
                           <option disabled="" selected="">- Select -</option>
                           <option value="Father"> Father </option>
@@ -248,7 +244,7 @@
                         <div class="row">
                           <div class="form-group col-md-6 col-lg-6">
                             <label for="gsm" class="col-form-label">PAN CARD</label>
-                            <!-- <input type="text" class="form-control" id="vin" name="vin" placeholder="" ngModel required=""> -->
+                            <!-- <input type="text" class="form-control" id="pancard" name="pancard" placeholder="" [(ngModel)]="member.password" required=""> -->
                             <!-- <input type="file" id="myFile" name="filename2"> -->
                             <div class="custom-file">
                               <input type="file" class="custom-file-input" id="customFile" name="filename">
@@ -257,7 +253,7 @@
                           </div>
                           <div class="form-group col-md-6 col-lg-6">
                             <label for="email" class="col-form-label">Photo</label>
-                            <!-- <input type="email" class="form-control" id="vehiclemodel" name="vehiclemodel" ngModel required=""> -->
+                            <!-- <input type="email" class="form-control" id="vehiclemodel" name="vehiclemodel" [(ngModel)]="member.password" required=""> -->
                             <div class="custom-file">
                               <input type="file" class="custom-file-input" id="customFile" name="filename">
                               <label class="custom-file-label" for="customFile">Choose file</label>
@@ -267,6 +263,7 @@
                       </div>
                     </section>
                   </div>
+                  <button type="submit" class="not-active btn btn-primary text-uppercase">SAVE</button>
               </form>
   
             </div>

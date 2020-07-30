@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {DataService} from '../../services/data.service';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+
+let memberModel = require('../../helpers/member_model.json');
 
 @Component({
   selector: 'app-add-edit-user',
@@ -14,6 +17,8 @@ export class AddEditUserComponent implements OnInit {
 
   alerts: any = [];
   userData=[];
+  queryParam: string = '';
+  member = Object.assign({}, memberModel);
 
   private _success = new Subject<string>();
 
@@ -21,7 +26,12 @@ export class AddEditUserComponent implements OnInit {
   successMessage = '';
   alerttype = '';
 
-  constructor(public reportService: DataService) { }
+  constructor(public reportService: DataService, private route: ActivatedRoute) { 
+    this.route.queryParams.subscribe(params => {
+      this.queryParam = params['val'];
+      console.log('this.queryParam', this.queryParam);
+    });
+  }
 
   public changeSuccessMessage(alertmessage) {
     // this._success.next(`${new Date()} - New User added Successfully !!!.`);
@@ -29,17 +39,61 @@ export class AddEditUserComponent implements OnInit {
     this.alerttype = "success";
   }
 
-  onFormSubmit(event) {
-    console.log(event);
-    // let checkedRoles = this.names.filter(x=>x.selected === true);
-    this.validateForm(event).then(data => {
-      this.userAdd(data);
-      console.log(data);
-    }).catch(e => {
-      this.changeSuccessMessage(e);
-    });
-     console.log("form111");
+  onFormSubmit() {
+    console.log('member----', this.member);
+
+    let formData = new FormData(); 
+    formData.append('username', this.member.username); 
+    formData.append('title', this.member.title); 
+    formData.append('first_name', this.member.first_name); 
+    formData.append('last_name', this.member.last_name);
+    formData.append('gaurdian_relation', this.member.gaurdian_relation);
+    formData.append('gaurdian_name', this.member.gaurdian_name); 
+    formData.append('dob', this.member.dob); 
+    formData.append('photo', this.member.photo); 
+    formData.append('pan_number', this.member.pan_number);
+    formData.append('pancard_pic', this.member.pancard_pic);
+    formData.append('address', this.member.address); 
+    formData.append('address_2', this.member.address_2); 
+    formData.append('city', this.member.city); 
+    formData.append('pincode', this.member.pincode);
+    formData.append('state', this.member.state);
+    formData.append('mobile', this.member.mobile); 
+    formData.append('email', this.member.email); 
+    formData.append('referal', this.member.referal); 
+    formData.append('upline_id', this.member.upline_id);
+    formData.append('nominee_relation', this.member.nominee_relation);
+    formData.append('nominee', this.member.nominee); 
+    formData.append('bank_name', this.member.bank_name); 
+    formData.append('acc_number', this.member.acc_number); 
+    formData.append('micr_code', this.member.micr_code);
+    formData.append('ifsc_code', this.member.ifsc_code);
+    formData.append('position', this.member.position);
+
+    this.reportService.createUserProfile(formData).subscribe(res => {
+      if (res['message'] == "sucess") {
+        this.changeSuccessMessage('New User added Successfully !!!');
+        console.log("user-management", res);
+        this.userData = res['users'];
+      }
+    },
+    err => {
+      console.log("In Error Block");
+      console.log(typeof (err));
+  });
   }
+
+  // onFormSubmit(event) {
+  //   console.log(event);
+  //   // let checkedRoles = this.names.filter(x=>x.selected === true);
+  //   this.validateForm(event).then(data => {
+  //     this.userAdd(data);
+  //     console.log(data);
+  //   }).catch(e => {
+  //     this.changeSuccessMessage(e);
+  //   });
+  //    console.log("form111");
+  // }
 
   private validateForm(event) {
     console.log("validateForm");
@@ -126,6 +180,7 @@ export class AddEditUserComponent implements OnInit {
 
   userAdd(userDetails) {
     console.log("userAdd ;", userDetails);
+
   this.reportService.createUserProfile(userDetails).subscribe(res => {
     if (res['message'] == "sucess") {
       this.changeSuccessMessage('New User added Successfully !!!');
@@ -142,8 +197,8 @@ export class AddEditUserComponent implements OnInit {
   ngOnInit(): void {
     this.reportService.getavailablepositions().subscribe(res => {   
       let resObj = res.json();
-      this.availablePositions = resObj.data.personal_detl;
-      console.log('this.availablePositions==>', this.availablePositions);
+      this.member.position = resObj.data.personal_detl ? resObj.data.personal_detl : resObj.data;
+      console.log('this.member.position==>', this.member.position, resObj);
     },
     err => {
       console.log('In Error Block');

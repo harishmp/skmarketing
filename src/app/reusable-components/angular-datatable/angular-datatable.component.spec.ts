@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Ng2TableComponent } from './ng2-table.component';
+import { AngularDatatableComponent } from './angular-datatable.component';
 
-describe('Ng2TableComponent', () => {
-  let component: Ng2TableComponent;
-  let fixture: ComponentFixture<Ng2TableComponent>;
+describe('AngularDatatableComponent', () => {
+  let component: AngularDatatableComponent;
+  let fixture: ComponentFixture<AngularDatatableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Ng2TableComponent ]
+      declarations: [ AngularDatatableComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Ng2TableComponent);
+    fixture = TestBed.createComponent(AngularDatatableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

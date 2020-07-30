@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
+import {DataService} from '../services/data.service';
 
 @Component({
   selector: 'app-member-dashboard',
@@ -8,6 +9,9 @@ import { Color, Label } from 'ng2-charts';
   styleUrls: ['./member-dashboard.component.css']
 })
 export class MemberDashboardComponent implements OnInit {
+  result: string;
+  na="N/A";
+
   public lineChartData: ChartDataSets[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
   ];
@@ -40,9 +44,17 @@ export class MemberDashboardComponent implements OnInit {
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
   ];
 
-  constructor() { }
+  constructor(public reportService: DataService) { }
 
   ngOnInit(): void {
+    this.reportService.getmemberdashboard().subscribe(res => {   
+      let resObj = res.json();
+      this.result = resObj.data;
+    },
+    err => {
+      console.log('In Error Block');
+      console.log(typeof (err));
+    });
   }
 
 }
